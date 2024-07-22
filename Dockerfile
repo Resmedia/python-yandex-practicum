@@ -45,7 +45,14 @@ RUN pip install \
     keras \
     tensorflow \
     traitlets==5.9.0 \
-    notebook==6.4.0
+    notebook==6.4.0 \
+    jupyter_contrib_nbextensions \
+    jupyter_nbextensions_configurator
+
+# Активируем и настраиваем Jupyter Notebook extensions
+RUN jupyter nbextensions_configurator enable \
+    && jupyter contrib nbextension install --user \
+    && jupyter nbextension enable toc2/main
 
 # Установка переменной окружения для conda
 ENV PATH /opt/conda/bin:$PATH
