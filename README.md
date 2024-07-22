@@ -5,17 +5,23 @@
 Clone the repository
 
 ```bash
-gh repo clone Resmedia/python-yandex-practicum
+# GitHub CLI
+gh repo clone Resmedia/python-yandex-practicum python
+#or HTTPS
+git clone https://github.com/Resmedia/python-yandex-practicum.git python
+#P.S. "python" is the name of the folder where the repository will be cloned you can change it
 ```
 
-====== Only for users who have `M` Silicon processor: ======
+### Create `.env` file in the root of the project with the following content. Replace `your_token` with your token
+```bash
+JUPYTER_TOKEN=your_token
+```
+
+### Attention!!! The current Dockerfile for INTEL Processor use only. For users who have `M` Silicon processor do next:
 1. Delete `Dockerfile`
 2. Rename `DockerfileSilicon` to `Dockerfile`
 
-=================================================
-
-add `JUPYTER_TOKEN=your_token` to .env file
-
+### Build the image
 ```bash
 docker build -t practicum .
 # or 
@@ -23,7 +29,7 @@ docker-compose up --build # to rebuild the image with logs
 docker-compose up -d --build # to rebuild the image without logs
 ```
 
-## Point 2. If point 1 done use this
+## Point 2. If point 1 done use this for starting project
 
 ### When you have already built the image and want to run the container
 ```bash
