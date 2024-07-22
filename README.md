@@ -1,5 +1,13 @@
 # This is docker environment for use Yandex Practicum with Python 3.8 on MacOS and Linux
 
+![Image](https://snipboard.io/Ua4z6h.jpg)
+
+## Requirements
+- Docker
+- Docker Compose
+- GitHub CLI (optional)
+- Internet connection
+
 ## Point 1. If it is at first time install
 
 ### 1.1 Clone the repository
@@ -12,17 +20,19 @@ git clone https://github.com/Resmedia/python-yandex-practicum.git python
 #P.S. "python" is the name of the folder where the repository will be cloned you can change it
 ```
 
+### 1.2 In docker settings add folder `python` to the shared folders settings->resources->file sharing
+
 ## !!!Attention. The current Dockerfile for INTEL Processor use only. For users who have `M` Silicon processor do next:
 1. Delete `Dockerfile`
 2. Rename `DockerfileSilicon` to `Dockerfile`
 
-### 1.2 Create `.env` file in the root of the project with the following content. Replace `your_token` with your token
+### 1.3 Create `.env` file in the root of the project with the following content. Replace `your_token` with your token
 ```bash
 JUPYTER_TOKEN=your_token
 ```
 ## !!! Before building the project connect to good internet connection, because the image is about `4.5 GB`
 
-### 1.3 Build the image
+### 1.4 Build the image
 ```bash
 docker build -t practicum .
 # or 
