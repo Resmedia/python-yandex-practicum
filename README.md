@@ -1,8 +1,8 @@
-## This is docker environment for use Yandex Practicum with Python 3.8 on MacOS and Linux
+# This is docker environment for use Yandex Practicum with Python 3.8 on MacOS and Linux
 
-## Point 1. At first time
+## Point 1. At first time if you don't build yet, use this
 
-Clone the repository
+### 1.1 Clone the repository
 
 ```bash
 # GitHub CLI
@@ -12,16 +12,18 @@ git clone https://github.com/Resmedia/python-yandex-practicum.git python
 #P.S. "python" is the name of the folder where the repository will be cloned you can change it
 ```
 
-### Create `.env` file in the root of the project with the following content. Replace `your_token` with your token
-```bash
-JUPYTER_TOKEN=your_token
-```
-
-### Attention!!! The current Dockerfile for INTEL Processor use only. For users who have `M` Silicon processor do next:
+`!!!Attention The current Dockerfile for INTEL Processor use only. For users who have "M" Silicon processor do next:`
 1. Delete `Dockerfile`
 2. Rename `DockerfileSilicon` to `Dockerfile`
 
-### Build the image
+### 1.2 Create `.env` file in the root of the project with the following content. Replace `your_token` with your token
+```bash
+JUPYTER_TOKEN=your_token
+```
+`
+!!! Before building the project connect to good internet connection, because the image is about 4.5 GB
+`
+### 1.3 Build the image
 ```bash
 docker build -t practicum .
 # or 
@@ -31,19 +33,19 @@ docker-compose up -d --build # to rebuild the image without logs
 
 ## Point 2. If point 1 done use this for starting project
 
-### When you have already built the image and want to run the container
+### 2.1 When you have already built the image and want to run the container
 ```bash
 docker-compose up # with logs
 docker-compose up -d # without logs
 docker-compose down # to stop the container
 ```
 
-### To see in the browser
+### 2.2 To see in the browser
 ```bash
 http://localhost:8888
 ```
 
-## Commands docker to help
+## Commands to help you work with Docker
 
 ### To see the logs
 ```bash
