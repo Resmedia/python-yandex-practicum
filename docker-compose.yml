@@ -8,8 +8,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/workspace
+      - jupyter:/root/.jupyter
     environment:
-        JUPYTER_TOKEN: ${JUPYTER_TOKEN}
         POSTGRES_USER: practicum
         POSTGRES_PASSWORD: toor
         POSTGRES_DB: practicum
@@ -19,16 +19,16 @@ services:
       - "8888:8888"
     depends_on:
       - postgres
-    entrypoint: ["sh", "-c", "pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator && jupyter nbextensions_configurator enable --user && jupyter contrib nbextension install --user && jupyter nbextension enable toc2/main && jupyter notebook --ip=0.0.0.0 --no-browser --allow-root --NotebookApp.token=${JUPYTER_TOKEN}"]
+    entrypoint: ["sh", "-c", "pip install jupyter_contrib_nbextensions jupyter_nbextensions_configurator && jupyter nbextensions_configurator enable --user && jupyter contrib nbextension install --user && jupyter nbextension enable toc2/main && jupyter notebook --ip=0.0.0.0 --no-browser --allow-root --NotebookApp.token=''"]
     command: []
 
   postgres:
     image: postgres:latest
     container_name: practicum_postgres
     environment:
-      - POSTGRES_USER=practicum
-      - POSTGRES_PASSWORD=toor
-      - POSTGRES_DB=practicum
+      POSTGRES_USER: practicum
+      POSTGRES_PASSWORD: toor
+      POSTGRES_DB: practicum
     ports:
       - "5432:5432"
     volumes:

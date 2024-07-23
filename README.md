@@ -101,13 +101,9 @@ git clone https://github.com/Resmedia/python-yandex-practicum.git python
 1. Delete `Dockerfile`
 2. Rename `DockerfileSilicon` to `Dockerfile`
 
-### 1.3 Create `.env` file in the root of the project with the following content. Replace `your_token` with your token
-```bash
-JUPYTER_TOKEN=your_token
-```
 ## !!! Before building the project connect to good internet connection, because the image is about `4.5 GB`
 
-### 1.4 Build the image
+### 1.3 Build the image
 ```bash
 docker build -t practicum .
 # or 
