@@ -1,4 +1,4 @@
-# This is docker environment for use Yandex Practicum with Python 3.11 on MacOS and Linux
+# This is docker environment for use Jupyter Notebook with Python 3.11 on MacOS and Linux
 
 ![Image](https://snipboard.io/Ua4z6h.jpg)
 
